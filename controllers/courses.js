@@ -11,7 +11,8 @@ function index(req, res) {
         res.render('courses/index', {
             title: 'All Golf Courses',
             courses,
-            user: req.user
+            user: req.user,
+            users
         })
     })
 }
