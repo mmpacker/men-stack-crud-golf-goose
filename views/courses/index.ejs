@@ -1,8 +1,27 @@
 <%- include('../partials/header') %>
 
 <main>
-  <h1>View All Golf Courses</h1>
+  <h1><%= title %></h1>
   <h2>/courses/index</h2>
+  <table id='list'>
+    <thead>
+      <tr>
+        <th>Golf Course Name</th>
+        <th>City</th>
+        <th>State</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% courses.forEach((c) => { %>
+        <tr>
+          <td><%= c.name %></td>
+          <td><%= c.city %></td>
+          <td><%= c.state %></td>
+          <td><a href="/courses/<%= c._id %> ">Details</a></td>
+        </tr>
+      <% })%> 
+    </tbody>
+  </table>
 </main>
 
 
