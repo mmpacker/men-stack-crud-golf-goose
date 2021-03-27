@@ -7,6 +7,13 @@ module.exports = {
     new: newCourse,
     search,
     find: findCourse,
+    create,
+}
+
+function create(req, res) {
+    Course.create(req.body, function(err, course) {
+        res.redirect('/courses')
+    })
 }
 
 function findCourse(req, res) {
