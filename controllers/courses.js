@@ -25,6 +25,8 @@ function review(req, res) {
             reviews: course ? course._id : '',
             courseId: course ? course._id : ''
         })
+        console.log('This is the course object: ', course)
+        console.log('This is the reviews object: ', course.reviews)
     }))
 }
 
