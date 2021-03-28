@@ -1,3 +1,4 @@
+const { response } = require('express');
 const Course = require('../models/course');
 const User = require('../models/user');
 
@@ -8,6 +9,21 @@ module.exports = {
     search,
     find: findCourse,
     create,
+    show
+}
+
+function show(req, res) {
+    Course.findById(req.params.id)
+    .populate('playedBy')
+    .then((course => {
+        res.render('courses/show', {
+            title: 'Course Details',
+            user: req.user,
+            course: response.data,
+            playedBy: course ? course.playedBy : [''],
+            reviews: course ? course._id : ''
+        })
+    }))
 }
 
 function create(req, res) {

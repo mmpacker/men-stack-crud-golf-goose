@@ -5,6 +5,7 @@ router.get('/', isLoggedIn, coursesCtrl.index)
 router.get('/mylist', isLoggedIn, coursesCtrl.myList)
 router.get('/new', isLoggedIn, coursesCtrl.new)
 router.get('/search', isLoggedIn, coursesCtrl.search)
+router.get('/:id', isLoggedIn, coursesCtrl.show)
 router.post('/', isLoggedIn, coursesCtrl.create)
 
 function isLoggedIn(req, res, next) {
