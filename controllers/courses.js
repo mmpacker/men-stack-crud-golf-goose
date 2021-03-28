@@ -9,7 +9,23 @@ module.exports = {
     search,
     find: findCourse,
     create,
-    show
+    show,
+    review
+}
+
+function review(req, res) {
+    Course.findById(req.params.id)
+    .populate('playedBy')
+    .then((course => {
+        res.render('courses/review', {
+            title: 'Course Reviews',
+            user: req.user,
+            course,
+            playedBy: course ? course.playedBy : [''],
+            reviews: course ? course._id : '',
+            courseId: course ? course._id : ''
+        })
+    }))
 }
 
 function show(req, res) {
@@ -19,9 +35,10 @@ function show(req, res) {
         res.render('courses/show', {
             title: 'Course Details',
             user: req.user,
-            course: response.data,
+            course,
             playedBy: course ? course.playedBy : [''],
-            reviews: course ? course._id : ''
+            reviews: course ? course._id : '',
+            courseId: course ? course._id : ''
         })
     }))
 }

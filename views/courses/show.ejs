@@ -1,8 +1,24 @@
 <%- include('../partials/header') %>
 
 <main>
-  <h1>Show Golf Course Details</h1>
-  <h2>/courses/show</h2>
+  <h1><%= title %></h1>
+  <h2>/courses/<%= courseId %></h2>
+  <div class='card' style='width: 30rem;'>
+    <img src="<%= course.imageUrl %>" class='card-img-top' alt="...">
+    <div class='card-body'>
+      <h5 class='card-title'><%= course.name %> </h5>
+      <h6 class='card-title'><%= course.city %>, <%= course.state %></h6>
+			<% let total = 0 %>
+      <% course.reviews.forEach(r => { %>
+        <% total += r.rating %> 
+      <% }) %>  
+      <p class="card-text"></p>
+        Average Golf Goose Rating: <%= (total / course.reviews.length).toFixed(2) %>
+      </p>
+      <a href="/courses/<%= course._id %>/review" class="btn btn-primary">Reviews</a>
+    </div>
+  </div>
+
 </main>
 
 
