@@ -1,27 +1,47 @@
 <%- include('../partials/header') %>
 
 <main>
-  <h1><%= title %></h1>
-  <h2>/courses/index</h2>
-  <table id='courseList'>
-    <thead>
-      <tr>
-        <th>Golf Course Name</th>
-        <th>City</th>
-        <th>State</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% courses.forEach((c) => { %>
-        <tr>
-          <td><%= c.name %></td>
-          <td><%= c.city %></td>
-          <td><%= c.state %></td>
-          <td><a href="/courses/<%= c._id %> ">Details</a></td>
-        </tr>
-      <% })%> 
-    </tbody>
-  </table>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md'>
+        <h1 id='pageTitle'><%= title %></h1>
+      </div>
+      <div class='col-md'> 
+        <h2>/courses/index</h2>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-sm'>
+        <h2>Golf Course Name</h2>
+      </div>
+      <div class='col-sm'>
+        <h2>City</h2>
+      </div>
+      <div class='col-sm'>
+        <h2>State</h2>
+      </div>
+      <div class='col-sm'>
+        <h2>Link</h2>
+      </div>
+    </div>  
+      <div class='row'>
+        <% courses.forEach((c) => { %>
+          
+            <div class='col-sm'>
+              <h3><%= c.name %></h3>
+            </div>
+            <div class='col-sm'>
+              <h3><%= c.city %></h3>
+            </div>
+            <div class='col-sm'>
+              <h3><%= c.state %></h3>
+            </div>
+            <div class='col-sm'>
+              <h3><a href="/courses/<%= c._id %> ">Details</a></h3>
+            </div>
+          <% })%> 
+      </div>
+    </div>
 </main>
 
 
