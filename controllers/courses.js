@@ -131,5 +131,6 @@ function index(req, res) {
             courses,
             user: req.user,
         })
+        console.log(courses)
     })
 }

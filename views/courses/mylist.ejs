@@ -3,13 +3,13 @@
 <main>
     <h1><%= title %></h1>
     <h2>/courses/mylist</h2>
-    <% courses.forEach(course=> { %>
+    <% courses.forEach(c=> { %>
         <div class='card' style='width: 18rem;'>
-          <img src="<%= course.imageUrl %>" class='card-img-top' alt="...">
+          <img src="<%= c.imageUrl %>" class='card-img-top' alt="...">
           <div class='card-body'>
-            <h5 class='card-title'><%= course.name %> </h5>
-            <h6 class='card-title'><%= course.city %>, <%= course.state %></h6>
-            <a href="/courses/<%= course._id %>" class="btn btn-primary">Details</a>
+            <h5 class='card-title'><%= c.name %> </h5>
+            <h6 class='card-title'><%= c.city %>, <%= c.state %></h6>
+            <a href="/courses/<%= c._id %>" class="btn btn-primary">Details</a>
           </div>
         </div>
       <% }) %>
