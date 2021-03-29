@@ -23,32 +23,82 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 120px 11fr 1fr;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    'nav'
+    'main'
+    'footer'
 }
 
 nav {
+  grid-area: nav;
   background-color: #0ea508;
   font-size: 1.6rem;
 }
 
 main {
+  grid-area: main;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  margin-top: 10px;
+}
+
+footer {
+  grid-area: footer;
 }
 
 h1 {
   font-size: 3.6rem;
 }
 
-.nav-item {
-  background-color: #064d04;
-  border-radius: 5px;
-  padding: 1px 1px 1px 1px;
-  margin: 3px 3px 3px 3px;
+.navbar-light .navbar-brand {
+  color: #fff;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link {
+  color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.navbar-toggler {
+  background: #fff;
+}
+
+.navbar-nav {
+  text-align: center;
 }
 
 .nav-link {
-  color: white;
+  padding: .2rem 5rem;
+}
+
+.nav-link.active,.nav-link:focus{
+  color: #fff;
+}
+
+.navbar-toggler {
+  padding: 1px 5px;
+  font-size: 18px;
+  line-height: 0.3;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: #fff;
+}
+
+#golfGoose {
+
 }
 
 #pageTitle {

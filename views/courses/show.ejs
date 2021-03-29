@@ -17,7 +17,7 @@
       </p>
       <a href="/courses/<%= course._id %>/review" class="btn btn-primary">Reviews</a>
     </div>
-    <% if (playedBy.some(u => {return u.email === user.email})) { %>
+    <% if (course.playedBy.some(u => {return u.email === user.email})) { %>
       <form
         action="/courses/<%= course._id %>/myPlayed?_method=DELETE"
         method="POST"
@@ -36,7 +36,7 @@
       <input type="text" hidden name="summary" value="<%= course.summary %>">
       <button 
         class="btn btn-warning">
-        <%= playedBy.some(u => {return u.email === user.email}) ? "Remove from My Courses" : "Add to My Courses" %>
+        <%= course.playedBy.some(u => {return u.email === user.email}) ? "Remove from My Courses" : "Add to My Courses" %>
       </button>
     </form>
   </div>

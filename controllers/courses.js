@@ -16,18 +16,19 @@ module.exports = {
 
 function addToMyList(req, res) {
     req.body.playedBy = req.user._id
-    Course.findById(req.body._id)
+    Course.findById(req.params.id)
     .then((course) => {
         if (course) {
             course.playedBy.push(req.user._id)
             course.save()
             .then(() => {
-                res.redirect(`/courses/${req.body._id}`)
+              res.redirect(`/courses/${req.params.id}`)
             })
+            .catch(err => console.log(err))
         } else {
             Course.create(req.body)
             .then(() => {
-                res.redirect(`/courses/${req.body._id}`)
+                res.redirect(`/courses/${req.params.id}`)
             })
         }
     })
@@ -63,18 +64,20 @@ function review(req, res) {
 }
 
 function show(req, res) {
+    console.log('show function req.params.id', req.params.id)
     Course.findById(req.params.id)
     .populate('playedBy')
-    .then((course => {
+    .then(course => {
         res.render('courses/show', {
             title: 'Course Details',
             user: req.user,
             course,
-            playedBy: course ? course.playedBy : [''],
-            reviews: course ? course._id : '',
-            courseId: course ? course._id : ''
+            // playedBy: course ? course.playedBy : [''],
+            // reviews: course ? course._id : '',
+            // courseId: course ? course._id : ''
         })
-    }))
+    })
+    .catch(err => console.log(err))
 }
 
 function create(req, res) {
