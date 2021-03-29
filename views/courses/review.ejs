@@ -1,8 +1,7 @@
 <%- include('../partials/header') %>
 
 <main>
-  <h1><%= title %></h1>
-  <h2>/courses/<%= courseId %>/review</h2>
+  <h1 id='pageTitle'><%= title %></h1>
   <div class='card' style='width: 30rem;'>
     <img src="<%= course.imageUrl %>" class='card-img-top' alt="...">
     <div class='card-body'>
@@ -15,52 +14,52 @@
       <p class="card-text"></p>
         Average Golf Goose Rating: <%= (total / course.reviews.length).toFixed(2) %>
       </p>
-      <a href="/courses/<%= course._id %>" class="btn btn-primary">Details</a>
+      <a href="/courses/<%= course._id %>" class="btn btn-primary mb-3">Details</a>
+      <% course.reviews.forEach(r => { %>
+          <%= r.rating %> - 
+          <img width="20" id="avatar" src="<%= r.avatar %>" alt="">
+          <%= r.reviewer %>
+        </p>
+        <p><%= r.content %></p>
+      <% }) %>
+      <% if (!course.reviews.some(u => {return u.reviewer === user.name}) && course.playedBy.some(u => {return u.email === user.email})) { %>
+        <form action="/courses/<%= courseId %>/createReview" method="POST">
+          <div class="form-group">
+            <textarea 
+              class="form-control"
+              name="content"
+              style="width: 18rem;"
+              id="exampleFormControlTextarea1"
+              placeholder="Leave a Review"
+              rows="3"
+          ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Rating</label>
+            <select
+              style="width: 18rem;"
+              class="form-control"
+              name="rating"
+              id="exampleFormControlSelect1"
+            >
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+            </select>
+          </div>
+          <input type="text" hidden name="reviewer" value="<%= user.name %>">
+          <input type="text" hidden name="avatar" value="<%= user.avatar %>"> 
+          <button class="btn btn-success">Add My Review</button>
+        </form>
+      <% } %>
     </div>
-    <% course.reviews.forEach(r => { %>
-        <%= r.rating %> - 
-        <img width="20" id="avatar" src="<%= r.avatar %>" alt="">
-        <%= r.reviewer %>
-      </p>
-      <p><%= r.content %></p>
-    <% }) %>
-  <% if (!course.reviews.some(u => {return u.reviewer === user.name}) && course.playedBy.some(u => {return u.email === user.email})) { %>
-    <form action="/courses/<%= courseId %>/createReview" method="POST">
-      <div class="form-group">
-        <textarea 
-          class="form-control"
-          name="content"
-          style="width: 18rem;"
-          id="exampleFormControlTextarea1"
-          placeholder="Leave a Review"
-          rows="3"
-      ></textarea>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Rating</label>
-        <select
-          style="width: 18rem;"
-          class="form-control"
-          name="rating"
-          id="exampleFormControlSelect1"
-        >
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-        </select>
-      </div>
-      <input type="text" hidden name="reviewer" value="<%= user.name %>">
-      <input type="text" hidden name="avatar" value="<%= user.avatar %>"> 
-      <button class="btn btn-info">Add My Review</button>
-    </form>
-  <% } %>
 </main>
 
 <%- include('../partials/footer') %>

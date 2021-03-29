@@ -25,7 +25,7 @@ body {
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  color: #fff;
+  color: black;
   margin: 0;
   min-height: 100vh;
   display: grid;
@@ -40,7 +40,9 @@ body {
 nav {
   grid-area: nav;
   background-color: #076504;
+  background: linear-gradient(0deg, rgba(22,142,32,1) 0%, rgba(7,101,4,1) 100%);
   font-size: 1.6rem;
+  border-bottom: 3px solid black;
 }
 
 main {
@@ -86,6 +88,8 @@ h1 {
 .nav-link {
   padding: .2rem 5rem;
   margin: 0 1.5rem 0 0;
+  font-size: 1.9rem;
+  text-shadow: 2px 2px black; 
 }
 
 .nav-link.active,.nav-link:focus{

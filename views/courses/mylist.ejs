@@ -1,8 +1,7 @@
 <%- include('../partials/header') %>
 
 <main>
-    <h1><%= title %></h1>
-    <h2>/courses/mylist</h2>
+    <h1 id='pageTitle'><%= title %></h1>
     <% courses.forEach(c=> { %>
         <div class='card' style='width: 18rem;'>
           <img src="<%= c.imageUrl %>" class='card-img-top' alt="...">

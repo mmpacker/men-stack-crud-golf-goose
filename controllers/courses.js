@@ -12,6 +12,18 @@ module.exports = {
     review,
     removeFromMyList,
     addToMyList,
+    createReview
+}
+
+function createReview(req, res) {
+    Course.findById(req.params.id)
+    .then((course) => {
+        course.reviews.push(req.body)
+        course.save()
+        .then(() => {
+            res.redirect(`/courses/${req.params.id}`)
+        })
+    })
 }
 
 function addToMyList(req, res) {
