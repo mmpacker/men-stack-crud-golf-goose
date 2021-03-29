@@ -1,4 +1,3 @@
-const { response } = require('express');
 const Course = require('../models/course');
 const User = require('../models/user');
 
@@ -10,7 +9,40 @@ module.exports = {
     find: findCourse,
     create,
     show,
-    review
+    review,
+    removeFromMyList,
+    addToMyList,
+}
+
+function addToMyList(req, res) {
+    req.body.playedBy = req.user._id
+    Course.findById(req.body._id)
+    .then((course) => {
+        if (course) {
+            course.playedBy.push(req.user._id)
+            course.save()
+            .then(() => {
+                res.redirect(`/courses/${req.body._id}`)
+            })
+        } else {
+            Course.create(req.body)
+            .then(() => {
+                res.redirect(`/courses/${req.body._id}`)
+            })
+        }
+    })
+}
+
+function removeFromMyList(req, res) {
+    Course.findById(req.params.id)
+    .then((course) => {
+        let idx = course.playedBy.indexOf(req.user._id)
+        course.playedBy.splice(idx, 1)
+        course.save()
+        .then(() => {
+            res.redirect(`/courses/${req.params.id}`)
+        })
+    })
 }
 
 function review(req, res) {

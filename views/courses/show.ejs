@@ -2,7 +2,7 @@
 
 <main>
   <h1><%= title %></h1>
-  <h2>/courses/<%= courseId %></h2>
+  <h2>/courses/<%= course._id %></h2>
   <div class='card' style='width: 30rem;'>
     <img src="<%= course.imageUrl %>" class='card-img-top' alt="...">
     <div class='card-body'>
@@ -17,9 +17,30 @@
       </p>
       <a href="/courses/<%= course._id %>/review" class="btn btn-primary">Reviews</a>
     </div>
+    <% if (playedBy.some(u => {return u.email === user.email})) { %>
+      <form
+        action="/courses/<%= course._id %>/myPlayed?_method=DELETE"
+        method="POST"
+      >
+    <% } else { %>
+      <form action="/courses/<%= course._id %>/myPlayed" method="POST">
+    <% } %>
+      <input type="text" hidden name="name" value="<%= course.name %>">
+      <input type="text" hidden name="imageUrl" value="<%= course.imageUrl %> ">
+      <input type="text" hidden name="city" value="<%= course.city %>">
+      <input type="text" hidden name="state" value="<%= course.state %>">
+      <input type="number" hidden name="usRank" value="<%= course.usRank %>">
+      <input type="boolean" hidden name="public" value="<%= course.public %>">
+      <input type="number" hidden name="yearBuilt" value="<%= course.yearBuilt %>">
+      <input type="text" hidden name="architects" value="<%= course.architects %>">
+      <input type="text" hidden name="summary" value="<%= course.summary %>">
+      <button 
+        class="btn btn-warning">
+        <%= playedBy.some(u => {return u.email === user.email}) ? "Remove from My Courses" : "Add to My Courses" %>
+      </button>
+    </form>
   </div>
 
 </main>
-
 
 <%- include('../partials/footer') %>
