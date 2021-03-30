@@ -7,104 +7,137 @@
         <h1 id='pageTitle'><%= title %></h1>
       </div>
       <div class='row'>
-        <div class='col-lg-15'>
           <div class='card mx-50' id='newCourseCard'>
             <form id='new-form' action='/courses' method='POST'>
-              <div class='mb-3' id='newCoursName'>
-                <label>Golf Course Name: </label>
-                <input type='text' name='name' id='newCourseNameInput'>
+              <div class='row'>
+                <div class='col-md-1 my-2'> </div>
+                <div class='col-md-9 my-2 d-flex align-self-start' id='newCoursName'>
+                  <label>Golf Course Name:</label>
+                  <input type='text' name='name' id='newCourseNameInput' size='33'>
+                </div>
+                <div class='col-md-2 my-2'> </div>
               </div>
-              <div class='mb-3' id='newCourseCity'>
-                <label>City: </label>
-                <input type='text' name='city' id='newCourseCityInput'>
+
+              <div class='row'>
+                <div class='col-md-1 my-2'> </div>
+                <div class='col-md-6 my-2' id='newCourseCity'>
+                  <label>City: </label>
+                  <input type='text' name='city' id='newCourseCityInput' size='25'>
+                </div>
+                <div class='col-md-4 my-2'id='newCourseState'>
+                  <label>State: </label>
+                  <select name='state'>
+                    <option value="AL">AL</option>
+                    <option value="AK">AK</option>
+                    <option value="AR">AR</option>	
+                    <option value="AZ">AZ</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="CT">CT</option>
+                    <option value="DC">DC</option>
+                    <option value="DE">DE</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="IA">IA</option>	
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="KS">KS</option>
+                    <option value="KY">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="MA">MA</option>
+                    <option value="MD">MD</option>
+                    <option value="ME">ME</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MO">MO</option>	
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="NC">NC</option>	
+                    <option value="NE">NE</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>			
+                    <option value="NV">NV</option>
+                    <option value="NY">NY</option>
+                    <option value="ND">ND</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VT">VT</option>
+                    <option value="VA">VA</option>
+                    <option value="WA">WA</option>
+                    <option value="WI">WI</option>	
+                    <option value="WV">WV</option>
+                    <option value="WY">WY</option>
+                  </select>
+                </div>
+                <div class='col-md-1 my-2'> </div>
               </div>
-              <div class='mb-3'id='newCourseState'>
-                <label>State: </label>
-                <select name='state'>
-                  <option value="AL">AL</option>
-                  <option value="AK">AK</option>
-                  <option value="AR">AR</option>	
-                  <option value="AZ">AZ</option>
-                  <option value="CA">CA</option>
-                  <option value="CO">CO</option>
-                  <option value="CT">CT</option>
-                  <option value="DC">DC</option>
-                  <option value="DE">DE</option>
-                  <option value="FL">FL</option>
-                  <option value="GA">GA</option>
-                  <option value="HI">HI</option>
-                  <option value="IA">IA</option>	
-                  <option value="ID">ID</option>
-                  <option value="IL">IL</option>
-                  <option value="IN">IN</option>
-                  <option value="KS">KS</option>
-                  <option value="KY">KY</option>
-                  <option value="LA">LA</option>
-                  <option value="MA">MA</option>
-                  <option value="MD">MD</option>
-                  <option value="ME">ME</option>
-                  <option value="MI">MI</option>
-                  <option value="MN">MN</option>
-                  <option value="MO">MO</option>	
-                  <option value="MS">MS</option>
-                  <option value="MT">MT</option>
-                  <option value="NC">NC</option>	
-                  <option value="NE">NE</option>
-                  <option value="NH">NH</option>
-                  <option value="NJ">NJ</option>
-                  <option value="NM">NM</option>			
-                  <option value="NV">NV</option>
-                  <option value="NY">NY</option>
-                  <option value="ND">ND</option>
-                  <option value="OH">OH</option>
-                  <option value="OK">OK</option>
-                  <option value="OR">OR</option>
-                  <option value="PA">PA</option>
-                  <option value="RI">RI</option>
-                  <option value="SC">SC</option>
-                  <option value="SD">SD</option>
-                  <option value="TN">TN</option>
-                  <option value="TX">TX</option>
-                  <option value="UT">UT</option>
-                  <option value="VT">VT</option>
-                  <option value="VA">VA</option>
-                  <option value="WA">WA</option>
-                  <option value="WI">WI</option>	
-                  <option value="WV">WV</option>
-                  <option value="WY">WY</option>
-                </select>
+              
+              <div class='row'>
+                <div class='col-md-1 my-2'> </div>
+                <div class='col-md-10 my-2 d-flex align-items-center' id='newCourseSummary'>
+                  <label>Summary: </label>
+                  <textarea name='summary' size='40' rows='2' cols='40'></textarea>
+                </div>
+                <div class='col-md-1 my-2'> </div>
               </div>
-              <div class='mb-3' id='newCourseSummary'>
-                <label>Summary: </label>
-                <input type='text' name='summary'>
+
+              <div class='row'>
+                <div class='col-md-1 my-2'> </div>
+                <div class='col-md-3 my-2' id='newCourseRank'>
+                  <label>US Rank: </label>
+                  <input type='text' name='usRank' size='5'>
+                </div>
+                <div class='col-md-2 my-2'> </div>
+                <div class='col-md-4 my-2' id='newCoursePublic'>
+                <label>Public Course: </label>
+                  <select name='public'>
+                    <option value=true>Yes</option>
+                    <option value=false>No</option>
+                  </select>
+                </div>
+                <div class='col-md-1 my-2'> </div>
               </div>
-              <div class='mb-3' id='newCourseRank'>
-                <label>US Rank: </label>
-                <input type='text' name='usRank'>
+
+              <div class='row'>
+                <div class='col-md-1 my-2'> </div>
+                <div class='col-md-3 my-2' id='newCourseBuilt'>
+                  <label>Year Built:</label>
+                  <input type='text' name='yearBuilt' size='4'>
+                </div>
+                <div class='col-md-7 my-2' id='newCourseArchitects'>
+                  <label>Architects: </label>
+                  <input type='text' name='architects' size='22'>
+                </div>
+                <div class='col-md-1 my-2'> </div>
               </div>
-              <div class='mb-3' id='newCoursePublic'>
-              <label>Public Course: </label>
-                <select name='public'>
-                  <option value=true>Yes</option>
-                  <option value=false>No</option>
-                </select>
+
+              <div class='row'>
+                <div class='col-md-1 my-2'> </div>
+                <div class='col-md-14 my-2' id='newCourseImage'>
+                  <label>Image URL:</label>
+                  <input type='text' name='imageUrl' size='43'>
+                </div>
+                <div class='col-md-1 my-2'> </div>
               </div>
-              <div class='mb-3' id='newCourseBuilt'>
-                <label>Year Built: </label>
-                <input type='text' name='yearBuilt'>
+
+              <div class='row'>
+                <div class='col-md-4 my-2'> </div>
+                <button type='submit' class='btn btn-warning col-md-3 my-2'>Add New Course</button>
+                <div class='col-md-1 my-2'> </div>
               </div>
-              <div class='mb-3' id='newCourseArchitects'>
-                <label>Architects: </label>
-                <input type='text' name='architects'>
-              </div>
-              <div class='mb-3' id='newCourseImage'>
-                <label>Image URL: </label>
-                <input type='text' name='imageUrl' default='images/Golf Goose Logo_transpBG.png'>
-              </div>
-              <button type='submit' class='btn btn-warning'>Submit</button>
             </form>
           </div>
-        </div>
       </div>
     </div>
   </div>

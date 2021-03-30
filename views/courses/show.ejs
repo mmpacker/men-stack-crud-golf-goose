@@ -1,48 +1,56 @@
 <%- include('../partials/header') %>
 
 <main>
-  <h1 id='pageTitle'><%= title %></h1>
-  <div class='card' style='width: 30rem;'>
-    <img src="images/generic-golf-course-img.jpeg" class='card-img-top' alt="">
-    <div class='card-body'>
-      <h5 class='card-title'><%= course.name %> </h5>
-      <h6 class='card-title'><%= course.city %>, <%= course.state %></h6>
-			<% let total = 0 %>
-      <% course.reviews.forEach(r => { %>
-        <% total += r.rating %> 
-      <% }) %>  
-      <p class="card-text"></p>
-        Average Golf Goose Rating: <%= (total / course.reviews.length).toFixed(2) %>
-      </p>
-      <div class='align-self-end ml-auto'>
-        <a href="/courses/<%= course._id %>/review" class="btn btn-primary float-right" id='right'>Reviews</a>
+  <div class='wrapper'>
+    <div class='container'>
+      <div class='row mb-4'>
+        <h1 id='pageTitle'><%= title %></h1>
       </div>
-      <div class='align-self-center mx-auto'>
-        <a href="/courses/<%= course._id %>/edit" class="btn btn-warning" id='center'>Edit Details</a>
-      </div>
-      <div class='align-self-start mr-auto'>
-      <% if (course.playedBy.some(u => {return u.email === user.email})) { %>
-        <form
-          action="/courses/<%= course._id %>/myPlayed?_method=DELETE"
-          method="POST"
-        >
-      <% } else { %>
-        <form action="/courses/<%= course._id %>/myPlayed" method="POST">
-      <% } %>
-        <input type="text" hidden name="name" value="<%= course.name %>">
-        <input type="text" hidden name="imageUrl" value="<%= course.imageUrl %> ">
-        <input type="text" hidden name="city" value="<%= course.city %>">
-        <input type="text" hidden name="state" value="<%= course.state %>">
-        <input type="number" hidden name="usRank" value="<%= course.usRank %>">
-        <input type="boolean" hidden name="public" value="<%= course.public %>">
-        <input type="number" hidden name="yearBuilt" value="<%= course.yearBuilt %>">
-        <input type="text" hidden name="architects" value="<%= course.architects %>">
-        <input type="text" hidden name="summary" value="<%= course.summary %>">
-          <button class="btn btn-success float-left" id='left'>
-            <%= course.playedBy.some(u => {return u.email === user.email}) ? "Remove" : "Add" %>
-          </button>
+      <div class='row'>
+        <div class='card mx-50' id='showCourseCard'>
+          <img src="images/generic-golf-course-img.jpeg" class='card-img-top' alt="">
+          <div class='card-body'>
+            <h5 class='card-title'><%= course.name %> </h5>
+            <h6 class='card-title'><%= course.city %>, <%= course.state %></h6>
+            <% let total = 0 %>
+            <% course.reviews.forEach(r => { %>
+              <% total += r.rating %> 
+            <% }) %>  
+            <p class="card-text"></p>
+              Average Golf Goose Rating: <%= (total / course.reviews.length).toFixed(2) %>
+            </p>
+            <div class='align-self-end ml-auto'>
+              <a href="/courses/<%= course._id %>/review" class="btn btn-primary float-right" id='right'>Reviews</a>
+            </div>
+            <div class='align-self-center mx-auto'>
+              <a href="/courses/<%= course._id %>/edit" class="btn btn-warning" id='center'>Edit Details</a>
+            </div>
+            <div class='align-self-start mr-auto'>
+            <% if (course.playedBy.some(u => {return u.email === user.email})) { %>
+              <form
+                action="/courses/<%= course._id %>/myPlayed?_method=DELETE"
+                method="POST"
+              >
+            <% } else { %>
+              <form action="/courses/<%= course._id %>/myPlayed" method="POST">
+            <% } %>
+              <input type="text" hidden name="name" value="<%= course.name %>">
+              <input type="text" hidden name="imageUrl" value="<%= course.imageUrl %> ">
+              <input type="text" hidden name="city" value="<%= course.city %>">
+              <input type="text" hidden name="state" value="<%= course.state %>">
+              <input type="number" hidden name="usRank" value="<%= course.usRank %>">
+              <input type="boolean" hidden name="public" value="<%= course.public %>">
+              <input type="number" hidden name="yearBuilt" value="<%= course.yearBuilt %>">
+              <input type="text" hidden name="architects" value="<%= course.architects %>">
+              <input type="text" hidden name="summary" value="<%= course.summary %>">
+                <button class="btn btn-success float-left" id='left'>
+                  <%= course.playedBy.some(u => {return u.email === user.email}) ? "Remove" : "Add" %>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </main>
