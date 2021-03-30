@@ -99,20 +99,23 @@ function create(req, res) {
 }
 
 function findCourse(req, res) {
-    Course.find({ name: req.body.name })
-        .then(courses => {
+    console.log(req.body.query)
+    Course.find({ name: req.body.query })
+        .then((results) => {
             res.render('courses/search', {
                 title: 'Search Courses',
                 user: req.user,
-                courses
+                results
             })
+            console.log('SEARCH RESULTS: ',results)
         })
 }
 
 function search(req, res) {
     res.render('courses/search', {
         title: 'Search Courses',
-        user: req.user
+        user: req.user,
+        results: null
     })
 }
 

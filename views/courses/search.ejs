@@ -2,8 +2,38 @@
 
 <main>
   <h1 id='pageTitle'>Golf Course Search/Results</h1>
-  <h2>/courses/search</h2>
+  <form action="/courses/find" method="POST">
+    <div class="form-row">
+      <div class="col-md-4">
+        <input 
+          type="text"
+          class="form-control"
+          name="query" 
+          placeholder="Search for a course...">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success">Search</button>
+  </form>
+    <% if (results) { %>
+      <% results.forEach(course => { %>
+        <div class="col-md-4">
+          <div class="card mx-30 mb-5">
+            <img src="images/generic-golf-course-img.jpeg" class="card-img-top" alt="" Secure>
+            <div class="card-body">
+              <h5 class="card-title text-nowrap">
+                <%= course.name %>
+              </h5>
+              <h6>
+                <%= course.city %>, <%= course.state %>
+              </h6>
+              <div class="buttons">
+                <a href="/courses/<%= course._id %>" class="btn btn-primary">Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    <% } %> 
 </main>
-
 
 <%- include('../partials/footer') %>
