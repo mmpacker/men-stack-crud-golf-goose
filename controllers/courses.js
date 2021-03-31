@@ -22,7 +22,7 @@ function editCourse(req, res) {
     .then(course => {
         res.render('courses/edit', {
             title: 'Edit Course Details',
-            user: req.user,
+            // user: req.user,
             course,
         })
     })
@@ -85,7 +85,7 @@ function review(req, res) {
     .then((course => {
         res.render('courses/review', {
             title: 'Course Reviews',
-            user: req.user,
+            // user: req.user,
             course,
             playedBy: course ? course.playedBy : [''],
             reviews: course ? course._id : '',
@@ -103,7 +103,7 @@ function show(req, res) {
     .then(course => {
         res.render('courses/show', {
             title: 'Course Details',
-            user: req.user,
+            // user: req.user,
             course,
             // playedBy: course ? course.playedBy : [''],
             // reviews: course ? course._id : '',
@@ -126,7 +126,7 @@ function findCourse(req, res) {
         .then((results) => {
             res.render('courses/search', {
                 title: 'Search Courses',
-                user: req.user,
+                // user: req.user,
                 results
             })
             console.log('SEARCH RESULTS: ',results)
@@ -136,14 +136,14 @@ function findCourse(req, res) {
 function search(req, res) {
     res.render('courses/search', {
         title: 'Search Courses',
-        user: req.user,
+        // user: req.user,
         results: null
     })
 }
 
 function newCourse(req, res) {
     res.render('courses/new', {
-        user: req.user,
+        // user: req.user,
         title: 'Add a New Course'
     })
 }
@@ -153,7 +153,7 @@ function myList(req, res) {
     .then((courses) => {
       res.render('courses/mylist', {
         title: "My Golf Courses",
-        user: req.user,
+        // user: req.user,
         courses
       })
     })
@@ -166,7 +166,7 @@ function index(req, res) {
         res.render('courses/index', {
             title: 'All Golf Courses',
             courses,
-            user: req.user,
+            // user: req.user,
         })
         console.log(courses)
     })
