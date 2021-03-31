@@ -140,9 +140,6 @@ h1 {
   min-width: 600px;
   min-height: 325px;
   font-size: 1.5rem;
-  /* display: grid;
-  grid-template-rows: 8% 12% 12% 12% 12% 12% 12% 12% 8%;
-  grid-template-columns: 5% 18% 18% 18% 18% 18% 5%; */
 }
 
 #editCourseCard {
@@ -154,9 +151,6 @@ h1 {
   min-width: 600px;
   min-height: 325px;
   font-size: 1.5rem;
-  /* display: grid;
-  grid-template-rows: 8% 12% 12% 12% 12% 12% 12% 12% 8%;
-  grid-template-columns: 5% 18% 18% 18% 18% 18% 5%; */
 }
 
 #showCourseCard {
@@ -168,9 +162,6 @@ h1 {
   width: 625px;
   min-height: 400px;
   font-size: 1.5rem;
-  /* display: grid;
-  grid-template-rows: 8% 12% 12% 12% 12% 12% 12% 12% 8%;
-  grid-template-columns: 5% 18% 18% 18% 18% 18% 5%; */
 }
 
 #searchCourseCard {
@@ -182,14 +173,7 @@ h1 {
   min-width: 600px;
   min-height: 50px;
   font-size: 1.5rem;
-  /* display: grid;
-  grid-template-rows: 8% 12% 12% 12% 12% 12% 12% 12% 8%;
-  grid-template-columns: 5% 18% 18% 18% 18% 18% 5%; */
 }
-
-/* #searchCourseResultsSection {
-  margin: 20px 0 0 0;
-} */
 
 #noResultsYet {
   color: white;
@@ -201,114 +185,6 @@ h1 {
   max-height: 300px;
 }
 
-/* #newCourseName {
-  grid-column-start: 2;
-  grid-column-end: 7;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  justify-self: start;
-  align-self: start;
-  display:flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-#newCourseCity {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  justify-self: stretch;
-  align-self: stretch;
-  display:flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-#newCourseCity {
-  grid-column-start: 5;
-  grid-column-end: 7;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  justify-self: stretch;
-  align-self: stretch;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#newCourseSummary {
-  grid-column-start: 2;
-  grid-column-end: 7;
-  grid-row-start: 4;
-  grid-row-end: 5;
-  justify-self: stretch;
-  align-self: stretch;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#newCourseRank {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 5;
-  grid-row-end: 6;
-  justify-self: stretch;
-  align-self: stretch;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#newCoursePublic {
-  grid-column-start: 5;
-  grid-column-end: 7;
-  grid-row-start: 5;
-  grid-row-end: 6;
-  justify-self: stretch;
-  align-self: stretch;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#newCourseBuilt {
-  grid-column-start: 2;
-  grid-column-end: 6;
-  grid-row-start: 6;
-  grid-row-end: 7;
-  justify-self: stretch;
-  align-self: stretch;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#newCourseArchitects {
-  grid-column-start: 2;
-  grid-column-end: 6;
-  grid-row-start: 7;
-  grid-row-end: 8;
-  justify-self: stretch;
-  align-self: stretch;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#newCourseImage {
-  grid-column-start: 2;
-  grid-column-end: 6;
-  grid-row-start: 8;
-  grid-row-end: 9;
-  justify-self: stretch;
-  align-self: stretch;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-} */
-
 #pageTitle {
   color: #fff;
   text-shadow: 3px 3px black; 
@@ -318,4 +194,11 @@ h1 {
   border-radius: 50%;
   background-color: rbga(0, 0, 0, 100);
   padding: 0 0 0 0;
+}
+
+footer {
+  margin: 10px;
+  font-size: 16px;
+  color: #fff;
+  text-shadow: 2px 2px black; 
 }
