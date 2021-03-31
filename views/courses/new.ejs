@@ -11,11 +11,10 @@
             <form id='new-form' action='/courses' method='POST'>
               <div class='row'>
                 <div class='col-md-1 my-2'> </div>
-                <div class='col-md-9 my-2 d-flex align-self-start' id='newCourseName'>
+                <div class='col-md-11 my-2 d-flex align-self-start' id='newCourseName'>
                   <label>Golf Course Name:</label>
-                  <input type='text' name='name' id='newCourseNameInput' size='33' placeholder='Course Name' required='true'>
+                  <input type='text' name='name' id='newCourseNameInput' size='41' placeholder='Course Name' required='true'>
                 </div>
-                <div class='col-md-2 my-2'> </div>
               </div>
 
               <div class='row'>
@@ -90,18 +89,17 @@
                 <div class='col-md-1 my-2'> </div>
                 <div class='col-md-10 my-2 d-flex align-items-center' id='newCourseSummary'>
                   <label>Summary: </label>
-                  <textarea name='summary' size='40' rows='2' cols='40'>Enter a brief summary here.</textarea>
+                  <textarea name='summary' size='40' rows='2' cols='50'>Enter a brief summary here.</textarea>
                 </div>
                 <div class='col-md-1 my-2'> </div>
               </div>
 
               <div class='row'>
                 <div class='col-md-1 my-2'> </div>
-                <div class='col-md-3 my-2' id='newCourseRank'>
+                <div class='col-md-4 my-2' id='newCourseRank'>
                   <label>US Rank: </label>
                   <input type='text' name='usRank' size='5' placeholder="0">
                 </div>
-                <div class='col-md-2 my-2'> </div>
                 <!-- <div class='col-md-4 my-2' id='newCoursePublic'>
                 <label>Public Course: </label>
                   <select name='public'>
@@ -109,37 +107,35 @@
                     <option value=false>No</option>
                   </select>
                 </div> -->
+                <div class='col-md-4 my-2' id='newCourseBuilt'>
+                  <label>Year Built:</label>
+                  <input type='text' name='yearBuilt' size='4' placeholder="2021">
+                </div>
                 <div class='col-md-3 my-2' id='newCoursePublic'>
                   <label>Public?: </label>
                   <input type='checkbox' name='public'>
                 </div>
-                <div class='col-md-1 my-2'> </div>
               </div>
 
               <div class='row'>
                 <div class='col-md-1 my-2'> </div>
-                <div class='col-md-3 my-2' id='newCourseBuilt'>
-                  <label>Year Built:</label>
-                  <input type='text' name='yearBuilt' size='4' placeholder="2021">
-                </div>
-                <div class='col-md-7 my-2' id='newCourseArchitects'>
+                <div class='col-md-11 my-2' id='newCourseArchitects'>
                   <label>Architects: </label>
-                  <input type='text' name='architects' size='20' placeholder="Tiger Woods">
+                  <input type='text' name='architects' size='48' placeholder="Tiger Woods">
+                </div>
+              </div>
+
+              <div class='row'>
+                <div class='col-md-1 my-2'> </div>
+                <div class='col-md-14 mx-4 my-2' id='newCourseImage'>
+                  <div> Image URL:</div>
+                  <input type='text' name='imageUrl' size='58' value='images/golf_placeholder.jpg' required='true'>
                 </div>
                 <div class='col-md-1 my-2'> </div>
               </div>
 
               <div class='row'>
-                <div class='col-md-1 my-2'> </div>
-                <div class='col-md-14 my-2' id='newCourseImage'>
-                  <label>Image URL:</label>
-                  <input type='text' name='imageUrl' size='41' value='images/golf_placeholder.jpg' required='true'>
-                </div>
-                <div class='col-md-1 my-2'> </div>
-              </div>
-
-              <div class='row'>
-                <div class='col-md-4 my-2'> </div>
+                <div class='col-md-4 mx-3'> </div>
                 <button type='submit' class='btn btn-warning col-md-3 my-2'>Add New Course</button>
                 <div class='col-md-1 my-2'> </div>
               </div>
