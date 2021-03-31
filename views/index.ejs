@@ -1,9 +1,7 @@
 <%- include('partials/header') %>
 
 <main>
-  <h1>hello, <%= user ? user.name : "friend" %></h1>
-  <h2>Landing Page</h2>
+  <h1 id='pageTitle'>Welcome <%= user ? user.name : 'Golfer' %>!</h1>
 </main>
-
 
 <%- include('partials/footer') %>

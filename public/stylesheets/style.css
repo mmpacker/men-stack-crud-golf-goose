@@ -197,8 +197,8 @@ h1 {
 }
 
 #showCourseImage {
-  min-width: 50px;
-  max-height: 250px;
+  max-width: 300px;
+  max-height: 300px;
 }
 
 /* #newCourseName {
@@ -308,10 +308,6 @@ h1 {
   align-items: center;
   justify-content: center;
 } */
-
-#golfGoose {
-
-}
 
 #pageTitle {
   color: #fff;
