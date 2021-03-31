@@ -33,14 +33,13 @@
                 <p id='showCourseRank'>Golf Magazine US Ranking: <%= course.usRank %></p>
               </div>
               <div class='row'>
-                <p id='showCourseArch1'>Architects:</p>
+                <div id='showCourseArch1'>Architects:</div>
               </div>
               <div class='row'>
-                <p id='showCourseArch2'><%= course.architects %></p>
+                <div id='showCourseArch2'><%= course.architects %></div>
               </div>
             </div>
           </div>
-
           <div class='row'>
             <div class='col-md-7'>
               <p id='showCourseSummaryTag'>Summary:</p>
@@ -59,7 +58,6 @@
               <% }) %>
             </div>
           </div>
-
           <div class='d-flex justify-content-md-around my-4'>
               <% if (course.playedBy.some(u => {return u.email === user.email})) { %>
                 <form action="/courses/<%= course._id %>/myPlayed?_method=DELETE" method="POST">
@@ -76,48 +74,11 @@
                 <input type="text" hidden name="architects" value="<%= course.architects %>">
                 <input type="text" hidden name="summary" value="<%= course.summary %>">
                 <button class="btn btn-success">
-                  <%= course.playedBy.some(u => {return u.email === user.email}) ? "Remove" : "Add" %>
+                  <%= course.playedBy.some(u => {return u.email === user.email}) ? "Remove from My Courses" : "Add to My Courses" %>
                 </button>
               </form>
-
-              <a href="/courses/<%= course._id %>/edit" class="btn btn-warning">Edit Details</a>
-            
-              <a href="/courses/<%= course._id %>/review" class="btn btn-primary">Reviews</a>
-          </div>
-      
-
-
-
-
-            <!-- <div class='align-self-end ml-auto'>
-              <a href="/courses/<%= course._id %>/review" class="btn btn-primary float-right" id='right'>Reviews</a>
-            </div>
-            <div class='align-self-center mx-auto'>
-              <a href="/courses/<%= course._id %>/edit" class="btn btn-warning" id='center'>Edit Details</a>
-            </div>
-            <div class='align-self-start mr-auto'>
-            <% if (course.playedBy.some(u => {return u.email === user.email})) { %>
-              <form
-                action="/courses/<%= course._id %>/myPlayed?_method=DELETE"
-                method="POST"
-              >
-            <% } else { %>
-              <form action="/courses/<%= course._id %>/myPlayed" method="POST">
-            <% } %>
-              <input type="text" hidden name="name" value="<%= course.name %>">
-              <input type="text" hidden name="imageUrl" value="<%= course.imageUrl %> ">
-              <input type="text" hidden name="city" value="<%= course.city %>">
-              <input type="text" hidden name="state" value="<%= course.state %>">
-              <input type="number" hidden name="usRank" value="<%= course.usRank %>">
-              <input type="boolean" hidden name="public" value="<%= course.public %>">
-              <input type="number" hidden name="yearBuilt" value="<%= course.yearBuilt %>">
-              <input type="text" hidden name="architects" value="<%= course.architects %>">
-              <input type="text" hidden name="summary" value="<%= course.summary %>">
-                <button class="btn btn-success float-left" id='left'>
-                  <%= course.playedBy.some(u => {return u.email === user.email}) ? "Remove" : "Add" %>
-                </button>
-              </div>
-            </form> -->
+            <a href="/courses/<%= course._id %>/edit" class="btn btn-warning">Edit Details</a>
+            <a href="/courses/<%= course._id %>/review" class="btn btn-primary">Reviews</a>
           </div>
         </div>
       </div>
