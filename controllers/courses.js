@@ -105,7 +105,7 @@ function show(req, res) {
             title: 'Course Details',
             // user: req.user,
             course,
-            // playedBy: course ? course.playedBy : [''],
+            playedBy: course ? course.playedBy : [''],
             // reviews: course ? course._id : '',
             // courseId: course ? course._id : ''
         })

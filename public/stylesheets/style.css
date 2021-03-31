@@ -136,7 +136,7 @@ h1 {
   background: linear-gradient(0deg, rgba(22,142,32,1) 0%, rgba(7,101,4,1) 100%);
   border: 3px solid black;
   border-radius: 10px;
-  padding: 5px;
+  padding: 15px;
   min-width: 600px;
   min-height: 325px;
   font-size: 1.5rem;
@@ -150,7 +150,7 @@ h1 {
   background: linear-gradient(0deg, rgba(22,142,32,1) 0%, rgba(7,101,4,1) 100%);
   border: 3px solid black;
   border-radius: 10px;
-  padding: 5px;
+  padding: 15px;
   min-width: 600px;
   min-height: 325px;
   font-size: 1.5rem;
@@ -164,9 +164,9 @@ h1 {
   background: linear-gradient(0deg, rgba(22,142,32,1) 0%, rgba(7,101,4,1) 100%);
   border: 3px solid black;
   border-radius: 10px;
-  padding: 5px;
+  padding: 15px;
   min-width: 600px;
-  min-height: 500px;
+  min-height: 400px;
   font-size: 1.5rem;
   /* display: grid;
   grid-template-rows: 8% 12% 12% 12% 12% 12% 12% 12% 8%;
