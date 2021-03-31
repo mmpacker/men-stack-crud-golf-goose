@@ -55,7 +55,7 @@ function addToMyList(req, res) {
             course.playedBy.push(req.user._id)
             course.save()
             .then(() => {
-              res.redirect(`/courses/${req.params.id}`)
+                res.redirect(`/courses/${req.params.id}`)
             })
             .catch(err => console.log(err))
         } else {
@@ -97,7 +97,6 @@ function review(req, res) {
 }
 
 function show(req, res) {
-    console.log('show function req.params.id', req.params.id)
     Course.findById(req.params.id)
     .populate('playedBy')
     .then(course => {
@@ -121,16 +120,14 @@ function create(req, res) {
 }
 
 function findCourse(req, res) {
-    console.log(req.body.query)
     Course.find({ name: req.body.query })
-        .then((results) => {
-            res.render('courses/search', {
-                title: 'Search Courses',
-                // user: req.user,
-                results
-            })
-            console.log('SEARCH RESULTS: ',results)
+    .then((results) => {
+        res.render('courses/search', {
+            title: 'Search Courses',
+            // user: req.user,
+            results
         })
+    })
 }
 
 function search(req, res) {
@@ -151,13 +148,13 @@ function newCourse(req, res) {
 function myList(req, res) {
     Course.find({ playedBy: req.user._id })
     .then((courses) => {
-      res.render('courses/mylist', {
-        title: "My Golf Courses",
-        // user: req.user,
-        courses
-      })
+        res.render('courses/mylist', {
+            title: "My Golf Courses",
+            // user: req.user,
+            courses
+        })
     })
-  }
+}
 
 function index(req, res) {
     Course.find({})
@@ -168,6 +165,5 @@ function index(req, res) {
             courses,
             // user: req.user,
         })
-        console.log(courses)
     })
 }
