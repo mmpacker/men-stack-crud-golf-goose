@@ -173,6 +173,29 @@ h1 {
   grid-template-columns: 5% 18% 18% 18% 18% 18% 5%; */
 }
 
+#searchCourseCard {
+  color: white;
+  background: linear-gradient(0deg, rgba(22,142,32,1) 0%, rgba(7,101,4,1) 100%);
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 15px;
+  min-width: 600px;
+  min-height: 50px;
+  font-size: 1.5rem;
+  /* display: grid;
+  grid-template-rows: 8% 12% 12% 12% 12% 12% 12% 12% 8%;
+  grid-template-columns: 5% 18% 18% 18% 18% 18% 5%; */
+}
+
+/* #searchCourseResultsSection {
+  margin: 20px 0 0 0;
+} */
+
+#noResultsYet {
+  color: white;
+  text-shadow: 3px 3px black;
+}
+
 #showCourseImage {
   min-width: 50px;
   max-height: 250px;
