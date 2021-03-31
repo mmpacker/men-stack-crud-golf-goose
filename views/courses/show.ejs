@@ -8,16 +8,44 @@
       </div>
       <div class='row'>
         <div class='card mx-50' id='showCourseCard'>
-          <img src="images/generic-golf-course-img.jpeg" class='card-img-top' alt="">
+          <div class='row'>
+            <div class='col-md-7 my-2 justify-content-center'>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Pebble_Beach_Golf_Links%2C_hole_7.jpg" id='showCourseImage' alt="">
+            </div>
+            <div class='col-md-5 my-4'>
+              <div class='row'>
+                <p id='showCourseName'><%= course.name %></p>
+              </div>
+              <div class='row mb-3'>
+                <p id='showCourseLoc'><%= course.city %>, <%= course.state %></p>
+              </div>
+              <% let total = 0 %>
+              <% course.reviews.forEach(r => { %>
+                <% total += r.rating %> 
+              <% }) %>
+              <div class='row'>
+                <p id='showCourseAvgRate'>Average User Rating: <%= (total / course.reviews.length).toFixed(2) %></p>
+              </div>
+              <div class='row'>
+                <p id='showCoursePubBuilt'>Public?: <%= course.public ? 'Yes' : 'No'%> - Built: <%= course.yearBuilt %></p>
+              </div>
+              <div class='row mb-2'>
+                <p id='showCourseRank'>Golf Magazine US Ranking: <%= course.usRank %></p>
+              </div>
+              <div class='row'>
+                <p id='showCourseArch1'>Architects:</p>
+              </div>
+              <div class='row'>
+                <p id='showCourseArch2'><%= course.architects %></p>
+              </div>
+            </div>
+            
+          </div>
           <div class='card-body'>
             <h5 class='card-title'><%= course.name %> </h5>
             <h6 class='card-title'><%= course.city %>, <%= course.state %></h6>
-            <% let total = 0 %>
-            <% course.reviews.forEach(r => { %>
-              <% total += r.rating %> 
-            <% }) %>  
             <p class="card-text"></p>
-              Average Golf Goose Rating: <%= (total / course.reviews.length).toFixed(2) %>
+              Average User Rating: <%= (total / course.reviews.length).toFixed(2) %>
             </p>
             <div class='align-self-end ml-auto'>
               <a href="/courses/<%= course._id %>/review" class="btn btn-primary float-right" id='right'>Reviews</a>

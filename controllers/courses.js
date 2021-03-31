@@ -12,7 +12,28 @@ module.exports = {
     review,
     removeFromMyList,
     addToMyList,
-    createReview
+    createReview,
+    update,
+    editCourse
+}
+
+function editCourse(req, res) {
+    Course.findById(req.params.id)
+    .then(course => {
+        res.render('courses/edit', {
+            title: 'Edit Course Details',
+            user: req.user,
+            course,
+        })
+    })
+}
+
+function update(req, res) {
+    req.body.public = !!req.body.public
+    Course.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+        res.redirect(`/courses/${req.params.id}`)
+    })
 }
 
 function createReview(req, res) {
@@ -93,6 +114,7 @@ function show(req, res) {
 }
 
 function create(req, res) {
+    req.body.public = !!req.body.public
     Course.create(req.body, function(err, course) {
         res.redirect('/courses')
     })
