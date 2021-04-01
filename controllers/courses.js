@@ -18,6 +18,16 @@ module.exports = {
     delete: deleteCourse,
 }
 
+function deleteCourse(req, res) {
+    Course.findById(req.params.id)
+    .then(course => {
+        if (!course.createdBy.equals(req.user._id)) return res.redirect('/courses');
+        Course.findByIdAndDelete(req.params.id)
+        .then(() => {
+            res.redirect('/courses')
+        })
+    })
+}
 
 function editCourse(req, res) {
     Course.findById(req.params.id)
@@ -26,17 +36,6 @@ function editCourse(req, res) {
         res.render('courses/edit', {
             title: 'Edit Course Details',
             course,
-        })
-    })
-}
-
-function deleteCourse(req, res) {
-    Course.findById(req.params.id)
-    .then(course => {
-        if (!course.createdBy.equals(req.user._id)) return res.redirect('/courses');
-        Course.findByIdAndDelete(req.params.id)
-        .then(() => {
-            res.redirect('/courses')
         })
     })
 }
@@ -102,7 +101,6 @@ function review(req, res) {
     .then((course => {
         res.render('courses/review', {
             title: 'Course Reviews',
-            // user: req.user,
             course,
             playedBy: course ? course.playedBy : [''],
             reviews: course ? course._id : '',
@@ -119,11 +117,8 @@ function show(req, res) {
     .then(course => {
         res.render('courses/show', {
             title: 'Course Details',
-            // user: req.user,
             course,
             playedBy: course ? course.playedBy : [''],
-            // reviews: course ? course._id : '',
-            // courseId: course ? course._id : ''
         })
     })
     .catch(err => console.log(err))
@@ -142,7 +137,6 @@ function findCourse(req, res) {
     .then((results) => {
         res.render('courses/search', {
             title: 'Search Courses',
-            // user: req.user,
             results
         })
     })
@@ -151,14 +145,12 @@ function findCourse(req, res) {
 function search(req, res) {
     res.render('courses/search', {
         title: 'Search Courses',
-        // user: req.user,
         results: null
     })
 }
 
 function newCourse(req, res) {
     res.render('courses/new', {
-        // user: req.user,
         title: 'Add a New Course'
     })
 }
@@ -168,7 +160,6 @@ function myList(req, res) {
     .then((courses) => {
         res.render('courses/mylist', {
             title: "My Played Courses",
-            // user: req.user,
             courses
         })
     })
@@ -181,7 +172,6 @@ function index(req, res) {
         res.render('courses/index', {
             title: 'All Golf Courses',
             courses,
-            // user: req.user,
         })
     })
 }
