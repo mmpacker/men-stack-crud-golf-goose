@@ -1,7 +1,6 @@
-# Golf Goose
-### by Matt Packer
+# Golf Goose - by Matt Packer
 
-*Golf Goose* is a full 'MEN' stack applicatioon that makes full use of CRUD (Create, Read, Update, Delete) data operations.
+*Golf Goose* is a full 'MEN' stack application that makes full use of CRUD (Create, Read, Update, Delete) data operations.
 
 This application is designed to help golf enthusiasts access a database of golf courses developed and maintained by users. Users can login to the app using their Google account (using Google OAuth) and then view a list of courses in the Golf Goose database, add new golf courses to the database, edit and delete course details for golf courses they created, add golf courses to a list of courses they have played, add reviews to courses they have played, and view reviews left by other users.
 
@@ -11,7 +10,7 @@ Future enhancements are planned. See below for a list of ‘icebox’ features t
 
 
 ### Getting Started:
-The app can be lauched [here](https://mp-golf-goose.herokuapp.com/) and was deployed using Heroku.
+The app can be launched [here](https://mp-golf-goose.herokuapp.com/) and was deployed using Heroku.
 
 I used [Trello](https://trello.com/b/T4z0YNwu/mmp-seir-unit-2-project-golf-goose#) to keep myself organized when planning and developing Golf Goose.
 
@@ -67,7 +66,7 @@ I used [Trello](https://trello.com/b/T4z0YNwu/mmp-seir-unit-2-project-golf-goose
 ### Next Steps (Icebox Features):
 * Improve the landing page by adding more visual interest to welcome the user to the app.
 * Improve app styling, and layouts on most views using CSS and Bootstrap.
-* Improve accessability by optimizing colors, fonts, and layouts.
+* Improve accessibility by optimizing colors, fonts, and layouts.
 * Add media queries and fully-responsive layout for an optimized experience on mobile, and large displays.
 * Add more social functionality so that users can interact and add other users as friends.
 * Allow users to add and update their user information, such as their bio and avatar.
