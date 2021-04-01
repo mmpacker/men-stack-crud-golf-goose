@@ -114,6 +114,7 @@ h1 {
 .card-img-top {
   box-shadow: 0 5px 10px rgba(0,0,0,0.5);
   height: 225px;
+  width: 348px;
 }
 
 .card-body {
