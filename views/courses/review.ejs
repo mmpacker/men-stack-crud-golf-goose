@@ -14,17 +14,18 @@
             </div>
             <div class='col-md-5 my-4'>
               <div class='row'>
-                <p id='showCourseName'><%= course.name %></p>
+                <div id='showCourseName'><%= course.name %></div>
               </div>
-              <div class='row mb-3'>
-                <p id='showCourseLoc'><%= course.city %>, <%= course.state %></p>
+              <div class='row mb-3 mb-4'>
+                <div id='showCourseLoc'><%= course.city %>, <%= course.state %></div>
               </div>
               <div class='row'>
                 <% let total = 0 %>
                 <% course.reviews.forEach(r => { %>
                   <% total += r.rating %> 
                 <% }) %>
-                <p id='showCourseAvgRate'>Average User Rating: <%= (total / course.reviews.length).toFixed(2) %></p>
+                <div id='showCourseTag' class='mr-2 mb-2'>Average User Rating:</div>
+                <div id='showCourseText'><%= (total / course.reviews.length).toFixed(2) %></div>
               </div>
               <div class='row mx-5 my-5'>
                 <a href="/courses/<%= course._id %>" class="btn btn-primary mb-3">Back to Details</a>
