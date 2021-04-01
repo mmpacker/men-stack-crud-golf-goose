@@ -1,5 +1,5 @@
 # Golf Goose
-##by Matt Packer
+### by Matt Packer
 
 *Golf Goose* is a full 'MEN' stack applicatioon that makes full use of CRUD (Create, Read, Update, Delete) data operations.
 
@@ -18,6 +18,15 @@ I used [Trello](https://trello.com/b/T4z0YNwu/mmp-seir-unit-2-project-golf-goose
 
 ### Screenshots:
 
+#### All Golf Courses View
+![Golf Goose All Golf Courses View](/images/GolfGoose_Screen_AllGolfCourses_v1.png)
+
+#### Course Details View
+
+
+#### Add New Course Form View
+
+
 ### Technologies Used:
 * MongoDB (Atlas)
 * Express
@@ -34,6 +43,7 @@ I used [Trello](https://trello.com/b/T4z0YNwu/mmp-seir-unit-2-project-golf-goose
 * Visual Studio Code (VS Code)
 * Trello (Planning and Organization Tool)
 * Whimsical (Wireframes, Entity Relationship Diagram)
+* Canva (Graphic Design Tool)
 * Slack (Collaboration and Communication)
 
 
