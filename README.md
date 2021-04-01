@@ -18,13 +18,23 @@ I used [Trello](https://trello.com/b/T4z0YNwu/mmp-seir-unit-2-project-golf-goose
 
 ### Screenshots:
 
-#### All Golf Courses View
-![Golf Goose All Golf Courses View](images/GolfGoose_Screen_AllGolfCourses_v1.png)
+##### Landing Page
 
-#### Course Details View
+###### Before Login
+![Landing Page Before Login](public/images/GolfGoose_Screen_LandingBeforeAuth_v1.png)
+
+###### After Login
+![Landing Page After Login](public/images/GolfGoose_Screen_LandingAfterAuth_v1.png)
 
 
-#### Add New Course Form View
+##### All Golf Courses View
+![All Golf Courses View](public/images/GolfGoose_Screen_AllGolfCourses_v1.png)
+
+##### Course Details View
+![Course Details View](public/images/GolfGoose_Screen_CourseDetails_v1.png)
+
+##### Add New Course Form View
+![Add New Course View](public/images/GolfGoose_Screen_AddNew_v1.png)
 
 
 ### Technologies Used:
@@ -40,12 +50,28 @@ I used [Trello](https://trello.com/b/T4z0YNwu/mmp-seir-unit-2-project-golf-goose
 * Git
 * GitHub
 * Heroku
+
+
+### Additional Tools and Resources:
+* Font Awesome
 * Visual Studio Code (VS Code)
 * Trello (Planning and Organization Tool)
 * Whimsical (Wireframes, Entity Relationship Diagram)
 * Canva (Graphic Design Tool)
+* PxHere (Free Creative Commons Images)
 * Slack (Collaboration and Communication)
+* Wikipedia (Golf Course Information and Selected Images)
+* Golf.com (Golf Course Rankings and Information)
 
 
 ### Next Steps (Icebox Features):
-*
+* Improve the landing page by adding more visual interest to welcome the user to the app.
+* Improve app styling, and layouts on most views using CSS and Bootstrap.
+* Improve accessability by optimizing colors, fonts, and layouts.
+* Add media queries and fully-responsive layout for an optimized experience on mobile, and large displays.
+* Add more social functionality so that users can interact and add other users as friends.
+* Allow users to add and update their user information, such as their bio and avatar.
+* Add another data entity to better track designers/architects so that they can be cross referenced between golf courses.
+* Add drop down list to the add a new course form that populates a list of architects from a separate data entity.
+* Enhance search capabilities to search by other attributes, such as location, architect, and whether a golf course is public or private.
+* Add the ability to search directly from the nav bar.
