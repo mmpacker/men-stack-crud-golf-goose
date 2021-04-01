@@ -74,3 +74,4 @@ I used [Trello](https://trello.com/b/T4z0YNwu/mmp-seir-unit-2-project-golf-goose
 * Add drop down list to the add a new course form that populates a list of architects from a separate data entity.
 * Enhance search capabilities to search by other attributes, such as location, architect, and whether a golf course is public or private.
 * Add the ability to search directly from the nav bar.
+* Add ability to upload images from the app to avoid linking to other sites.
