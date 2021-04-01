@@ -120,6 +120,7 @@ h1 {
 .card-body {
   text-align: center;
   box-shadow: 0px 15px 15px -8px rgba(0,0,0,0.5);
+  width: 348px;
 }
 
 .card-body h6 {
