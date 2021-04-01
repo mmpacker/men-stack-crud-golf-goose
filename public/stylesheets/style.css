@@ -183,8 +183,57 @@ h1 {
 }
 
 #showCourseImage {
-  max-width: 300px;
-  max-height: 300px;
+  min-width: 200px;
+  max-width: 325px;
+  min-height:300px
+  max-height: 400px;
+  border-radius: 5px;
+}
+
+#showCourseName {
+  color: white;
+  text-shadow: 3px 3px black;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+#showCourseLoc {
+  color: lime;
+  text-shadow: 3px 3px black;
+  font-size: 14px;
+}
+
+#showCourseTag {
+  color: white;
+  text-shadow: 2px 2px black;
+  font-size: 14px;
+}
+
+#showCourseText {
+  color: lime;
+  font-size: 14px;
+}
+
+#showCourseSummaryTag {
+  color: white;
+  text-shadow: 2px 2px black;
+  font-size: 18px;
+}
+
+#showCourseSummaryText {
+  color: lime;
+  font-size: 14px;
+}
+
+#showCoursePlayedByTag {
+  color: white;
+  text-shadow: 2px 2px black;
+  font-size: 18px;
+}
+
+#showCoursePlayedByText {
+  color: lime;
+  font-size: 14px;
 }
 
 #pageTitle {
@@ -196,6 +245,10 @@ h1 {
   border-radius: 50%;
   background-color: rbga(0, 0, 0, 100);
   padding: 0 0 0 0;
+}
+
+.btn {
+  font-size: 12px
 }
 
 footer {

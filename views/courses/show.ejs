@@ -12,49 +12,54 @@
             <div class='col-md-7 my-2 justify-content-center'>
               <img src="<%= course.imageUrl %>" id='showCourseImage' alt="">
             </div>
-            <div class='col-md-5 my-4'>
+            <div class='col-md-5 my-2'>
               <div class='row'>
-                <p id='showCourseName'><%= course.name %></p>
+                <div id='showCourseName'><%= course.name %></div>
               </div>
-              <div class='row mb-3'>
-                <p id='showCourseLoc'><%= course.city %>, <%= course.state %></p>
+              <div class='row mb-3 mb-4'>
+                <div id='showCourseLoc'><%= course.city %>, <%= course.state %></div>
               </div>
               <div class='row'>
                 <% let total = 0 %>
                 <% course.reviews.forEach(r => { %>
                   <% total += r.rating %> 
                 <% }) %>
-                <p id='showCourseAvgRate'>Average User Rating: <%= (total / course.reviews.length).toFixed(2) %></p>
+                <div id='showCourseTag' class='mr-2 mb-2'>Average User Rating:</div>
+                <div id='showCourseText'><%= (total / course.reviews.length).toFixed(2) %></div>
               </div>
               <div class='row'>
-                <p id='showCoursePubBuilt'>Public?: <%= course.public ? 'Yes' : 'No'%> - Built: <%= course.yearBuilt %></p>
+                <div id='showCourseTag' class='mr-2'>Public?:</div>
+                <div id='showCourseText' class='mr-4 mb-2'><%= course.public ? 'Yes' : 'No'%></div>
+                <div id='showCourseTag' class='mr-1'>Built:</div> 
+                <div id='showCourseText'><%= course.yearBuilt %></div>
               </div>
               <div class='row mb-2'>
-                <p id='showCourseRank'>Golf Magazine US Ranking: <%= course.usRank %></p>
+                <div id='showCourseTag' class='mr-2 mb-4'>Golf Magazine Rank:</div> 
+                <div id='showCourseText'><%= course.usRank %></div>
               </div>
               <div class='row'>
-                <div id='showCourseArch1'>Architects:</div>
+                <div id='showCourseTag' class='mb-1'>Architects:</div>
               </div>
               <div class='row'>
-                <div id='showCourseArch2'><%= course.architects %></div>
+                <div id='showCourseText' class='mb-4'><%= course.architects %></div>
               </div>
             </div>
           </div>
           <div class='row'>
             <div class='col-md-7'>
-              <p id='showCourseSummaryTag'>Summary:</p>
+              <div id='showCourseSummaryTag'>Summary:</div>
             </div>
             <div class='col-md-5'>
-              <p id='showCoursePlayedByTag'>Played By:</p>
+              <div id='showCoursePlayedByTag'>Played By:</div>
             </div>
           </div>
           <div class='row'>
             <div class='col-md-7'>
-              <p id=showCourseSummary><%= course.summary %></p>
+              <div id=showCourseSummaryText><%= course.summary %></div>
             </div>
             <div class='col-md-5'>
               <% playedBy.forEach (u => { %> 
-                <div id='showCoursePlayedBy'><%= u.name %></div>
+                <div id='showCoursePlayedByText'><%= u.name %></div>
               <% }) %>
             </div>
           </div>
