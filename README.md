@@ -19,7 +19,7 @@ I used [Trello](https://trello.com/b/T4z0YNwu/mmp-seir-unit-2-project-golf-goose
 ### Screenshots:
 
 #### All Golf Courses View
-![Golf Goose All Golf Courses View](/images/GolfGoose_Screen_AllGolfCourses_v1.png)
+![Golf Goose All Golf Courses View](images/GolfGoose_Screen_AllGolfCourses_v1.png)
 
 #### Course Details View
 
