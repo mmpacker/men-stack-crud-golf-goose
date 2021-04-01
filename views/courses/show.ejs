@@ -77,9 +77,8 @@
                   <%= course.playedBy.some(u => {return u.email === user.email}) ? "Remove from My Courses" : "Add to My Courses" %>
                 </button>
               </form>
-              <% if (course.createdBy.some(u => {return u.email === user.email})) { %>
+              <% if (course.createdBy.equals(user._id)) { %>
                 <a href="/courses/<%= course._id %>/edit" class="btn btn-warning">Edit Details</a>
-                
                 <form action="/courses/<%= course._id %>?_method=DELETE" method='POST'>
                   <button type='delete' class='btn btn-danger'>Delete Course</button>
                 </form>
