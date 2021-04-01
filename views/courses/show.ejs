@@ -78,6 +78,9 @@
                 </button>
               </form>
             <a href="/courses/<%= course._id %>/edit" class="btn btn-warning">Edit Details</a>
+            <form action="/courses/<%= course._id %>?_method=DELETE" method='POST'>
+              <button type='delete' class='btn btn-danger'>Delete Course</button>
+            </form>
             <a href="/courses/<%= course._id %>/review" class="btn btn-primary">Reviews</a>
           </div>
         </div>

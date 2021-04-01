@@ -1,4 +1,3 @@
-const course = require('../models/course');
 const Course = require('../models/course');
 const User = require('../models/user');
 
@@ -19,13 +18,6 @@ module.exports = {
     delete: deleteCourse,
 }
 
-function deleteCourse(req, res) {
-    Course.findByIdAndDelete(req.params.id)
-    .then(() => {
-        if (!course.createdBy.equals(req.user._id)) return res.redirect('/courses');
-        res.redirect('/courses')
-    })
-}
 
 function editCourse(req, res) {
     Course.findById(req.params.id)
@@ -38,12 +30,26 @@ function editCourse(req, res) {
     })
 }
 
+function deleteCourse(req, res) {
+    Course.findById(req.params.id)
+    .then(course => {
+        if (!course.createdBy.equals(req.user._id)) return res.redirect('/courses');
+        Course.findByIdAndDelete(req.params.id)
+        .then(() => {
+            res.redirect('/courses')
+        })
+    })
+}
+
 function update(req, res) {
     req.body.public = !!req.body.public
-    Course.findByIdAndUpdate(req.params.id, req.body)
-    .then(() => {
+    Course.findById(req.params.id)
+    .then(course => {
         if (!course.createdBy.equals(req.user._id)) return res.redirect('/courses');
-        res.redirect(`/courses/${req.params.id}`)
+        Course.findByIdAndUpdate(req.params.id, req.body)
+        .then(() => {
+            res.redirect(`/courses/${req.params.id}`)
+        })
     })
 }
 

@@ -14,6 +14,7 @@ router.post('/find', isLoggedIn, coursesCtrl.find)
 router.post('/:id/createReview', isLoggedIn, coursesCtrl.createReview)
 router.post('/:id/myPlayed', isLoggedIn, coursesCtrl.addToMyList)
 
+router.delete('/:id', isLoggedIn, coursesCtrl.delete)
 router.delete("/:id/myPlayed", isLoggedIn, coursesCtrl.removeFromMyList)
 
 router.put('/:id', isLoggedIn, coursesCtrl.update)
