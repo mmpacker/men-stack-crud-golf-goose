@@ -21,7 +21,8 @@ const courseSchema = new Schema({
     architects: {type: String},
     summary: {type: String},
     playedBy: [{type: Schema.Types.ObjectId, ref: 'User'}],
-    reviews: [reviewSchema]
+    reviews: [reviewSchema],
+    createdBy: {type: Schema.Types.ObjectId,ref: 'user'}
 }, {
     timestamps: true
 });

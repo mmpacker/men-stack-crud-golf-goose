@@ -1,3 +1,4 @@
+const course = require('../models/course');
 const Course = require('../models/course');
 const User = require('../models/user');
 
@@ -14,15 +15,24 @@ module.exports = {
     addToMyList,
     createReview,
     update,
-    editCourse
+    editCourse,
+    delete: deleteCourse,
+}
+
+function deleteCourse(req, res) {
+    Course.findByIdAndDelete(req.params.id)
+    .then(() => {
+        if (!course.createdBy.equals(req.user._id)) return res.redirect('/courses');
+        res.redirect('/courses')
+    })
 }
 
 function editCourse(req, res) {
     Course.findById(req.params.id)
     .then(course => {
+        if (!course.createdBy.equals(req.user._id)) return res.redirect('/courses');
         res.render('courses/edit', {
             title: 'Edit Course Details',
-            // user: req.user,
             course,
         })
     })
@@ -32,6 +42,7 @@ function update(req, res) {
     req.body.public = !!req.body.public
     Course.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
+        if (!course.createdBy.equals(req.user._id)) return res.redirect('/courses');
         res.redirect(`/courses/${req.params.id}`)
     })
 }
@@ -55,13 +66,13 @@ function addToMyList(req, res) {
             course.playedBy.push(req.user._id)
             course.save()
             .then(() => {
-                res.redirect(`/courses/${req.params.id}`)
+                res.redirect(`/courses/mylist`)
             })
             .catch(err => console.log(err))
         } else {
             Course.create(req.body)
             .then(() => {
-                res.redirect(`/courses/${req.params.id}`)
+                res.redirect(`/courses/mylist`)
             })
         }
     })
@@ -74,7 +85,7 @@ function removeFromMyList(req, res) {
         course.playedBy.splice(idx, 1)
         course.save()
         .then(() => {
-            res.redirect(`/courses/${req.params.id}`)
+            res.redirect(`/courses/mylist`)
         })
     })
 }
@@ -113,6 +124,7 @@ function show(req, res) {
 }
 
 function create(req, res) {
+    req.body.createdBy = req.user._id
     req.body.public = !!req.body.public
     Course.create(req.body, function(err, course) {
         res.redirect('/courses')
@@ -149,7 +161,7 @@ function myList(req, res) {
     Course.find({ playedBy: req.user._id })
     .then((courses) => {
         res.render('courses/mylist', {
-            title: "My Golf Courses",
+            title: "My Played Courses",
             // user: req.user,
             courses
         })
