@@ -1,17 +1,33 @@
 <%- include('../partials/header') %>
 
 <main>
-    <h1 id='pageTitle'><%= title %></h1>
-    <% courses.forEach(c=> { %>
-        <div class='card' style='width: 18rem;'>
-          <img src="images/generic-golf-course-img.jpeg" class='card-img-top' alt="...">
-          <div class='card-body'>
-            <h5 class='card-title'><%= c.name %> </h5>
-            <h6 class='card-title'><%= c.city %>, <%= c.state %></h6>
-            <a href="/courses/<%= c._id %>" class="btn btn-primary">Details</a>
+  <div class='wrapper'>
+    <div class='container'>
+      <div class='row mb-10'>
+        <h1 id='pageTitle'><%= title %></h1>
+      </div>  
+      <div class="row">
+        <% courses.forEach((c) => { %>
+          <div class='col-md-4'>
+            <div class='card mx-30 mb-5'>
+              <img src='<%= c.imageUrl %>' class='card-img-top' alt="" Secure>
+              <div class='card-body'>
+                <h5 class="card-title">
+                  <%= c.name %>
+                </h5>
+                <h6>
+                  <%= c.city %>, <%= c.state %>
+                </h6>
+                <div class="buttons">
+                  <a href="/courses/<%= c._id %>" class="btn btn-primary">Details</a>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      <% }) %>
+        <% })%> 
+      </div>
+    </div>
+  </div>  
 </main>
 
 <%- include('../partials/footer') %>
