@@ -20,20 +20,20 @@ I used [Trello](https://trello.com/b/T4z0YNwu/mmp-seir-unit-2-project-golf-goose
 ##### Landing Page
 
 ###### Before Login
-![Landing Page Before Login](public/images/GolfGoose_Screen_LandingBeforeAuth_v1.png)
+![Landing Page Before Login](public/images/GolfGoose_Screen_LandingBeforeAuth_v2.png)
 
 ###### After Login
-![Landing Page After Login](public/images/GolfGoose_Screen_LandingAfterAuth_v1.png)
+![Landing Page After Login](public/images/GolfGoose_Screen_LandingAfterAuth_v2.png)
 
 
 ##### All Golf Courses View
-![All Golf Courses View](public/images/GolfGoose_Screen_AllGolfCourses_v1.png)
+![All Golf Courses View](public/images/GolfGoose_Screen_AllGolfCourses_v2.png)
 
 ##### Course Details View
-![Course Details View](public/images/GolfGoose_Screen_CourseDetails_v1.png)
+![Course Details View](public/images/GolfGoose_Screen_CourseDetails_v2.png)
 
 ##### Add New Course Form View
-![Add New Course View](public/images/GolfGoose_Screen_AddNew_v1.png)
+![Add New Course View](public/images/GolfGoose_Screen_AddNew_v2.png)
 
 
 ### Technologies Used:
