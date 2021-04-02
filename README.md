@@ -30,7 +30,7 @@ I used [Trello](https://trello.com/b/T4z0YNwu/mmp-seir-unit-2-project-golf-goose
 ![All Golf Courses View](public/images/GolfGoose_Screen_AllGolfCourses_v2.png)
 
 ##### Course Details View
-![Course Details View](public/images/GolfGoose_Screen_CourseDetails_v2.png)
+![Course Details View](public/images/GolfGoose_Screen_CourseDetails_v3.png)
 
 ##### Add New Course Form View
 ![Add New Course View](public/images/GolfGoose_Screen_AddNew_v2.png)
