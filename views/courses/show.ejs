@@ -64,7 +64,8 @@
             </div>
           </div>
           <div class='d-flex justify-content-md-around my-4'>
-              <% if (course.playedBy.some(u => {return u.email === user.email})) { %>
+              <!-- This code contains the functionality that checks whether a user has added a golf course to their 'My Courses' list. -->
+            <% if (course.playedBy.some(u => {return u.email === user.email})) { %>
                 <form action="/courses/<%= course._id %>/myPlayed?_method=DELETE" method="POST">
               <% } else { %>
                 <form action="/courses/<%= course._id %>/myPlayed" method="POST">
@@ -82,6 +83,7 @@
                   <%= course.playedBy.some(u => {return u.email === user.email}) ? "Remove from My Courses" : "Add to My Courses" %>
                 </button>
               </form>
+              <!-- This code is part of the user-centric functionality. -->
               <% if (course.createdBy.equals(user._id)) { %>
                 <a href="/courses/<%= course._id %>/edit" class="btn btn-warning">Edit Details</a>
                 <form action="/courses/<%= course._id %>?_method=DELETE" method='POST'>

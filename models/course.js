@@ -22,7 +22,7 @@ const courseSchema = new Schema({
     summary: {type: String},
     playedBy: [{type: Schema.Types.ObjectId, ref: 'User'}],
     reviews: [reviewSchema],
-    createdBy: {type: Schema.Types.ObjectId,ref: 'user'}
+    createdBy: {type: Schema.Types.ObjectId,ref: 'User'}
 }, {
     timestamps: true
 });

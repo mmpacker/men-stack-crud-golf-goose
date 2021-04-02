@@ -1,8 +1,8 @@
 # Golf Goose - by Matt Packer
 
-*Golf Goose* is a full 'MEN' stack application that makes full use of CRUD (Create, Read, Update, Delete) data operations.
+*Golf Goose* is a full 'MEN' (MongoDB, Express, Node) stack application that makes full use of CRUD (Create, Read, Update, Delete) data operations.
 
-This application is designed to help golf enthusiasts access a database of golf courses developed and maintained by users. Users can login to the app using their Google account (using Google OAuth) and then view a list of courses in the Golf Goose database, add new golf courses to the database, edit and delete course details for golf courses they created, add golf courses to a list of courses they have played, add reviews to courses they have played, and view reviews left by other users.
+This application is designed to help golf enthusiasts access a database of golf courses developed and maintained by users. Users can login to the app using their Google account (using Google OAuth) and then view a list of courses in the Golf Goose database, add new golf courses to the database, edit and delete course details for golf courses they created, add golf courses to a user-specific list of courses they have played, add reviews to courses they have played, and view reviews left by other users.
 
 *Golf Goose* was created during the second unit of [General Assembly](https://www.generalassemb.ly)'s Software Engineering Immersive program. The initial version was planned, developed and deployed over the course of about one week. It was created from scratch using technologies in the ‘MEN’ stack, including MongoDB, Mongoose, Express, and Node.
 
@@ -68,6 +68,7 @@ I used [Trello](https://trello.com/b/T4z0YNwu/mmp-seir-unit-2-project-golf-goose
 * Improve app styling, and layouts on most views using CSS and Bootstrap.
 * Improve accessibility by optimizing colors, fonts, and layouts.
 * Add media queries and fully-responsive layout for an optimized experience on mobile, and large displays.
+* Improve responsive rendering of cards on index and mylist views.
 * Add more social functionality so that users can interact and add other users as friends.
 * Allow users to add and update their user information, such as their bio and avatar.
 * Add another data entity to better track designers/architects so that they can be cross referenced between golf courses.
@@ -75,3 +76,4 @@ I used [Trello](https://trello.com/b/T4z0YNwu/mmp-seir-unit-2-project-golf-goose
 * Enhance search capabilities to search by other attributes, such as location, architect, and whether a golf course is public or private.
 * Add the ability to search directly from the nav bar.
 * Add ability to upload images from the app to avoid linking to other sites.
+* Enhance footer styling.

@@ -1,5 +1,4 @@
 const Course = require('../models/course');
-const User = require('../models/user');
 
 module.exports = {
     index,
@@ -18,6 +17,7 @@ module.exports = {
     delete: deleteCourse,
 }
 
+// The delete, update, and edit functions include user-centric validation.
 function deleteCourse(req, res) {
     Course.findById(req.params.id)
     .then(course => {
